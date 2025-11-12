@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Neural Predictive Calculator - Evaluating the Arithmetic Capabilities of Neural Networks">
+    <meta name="keywords" content="neural networks, machine learning, arithmetic, transformers, RNN, FNN">
+    <meta name="author" content="Anton Mukin">
+    <title>Neural Predictive Calculator | Research Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">Neural Predictive Calculator</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#architectures">Architectures</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#documentation">Documentation</a></li>
+                    <li><a href="https://github.com/AntonStantan/matura" target="_blank" class="github-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Research Project | Maturaarbeit</div>
+                <h1 class="hero-title">Neural Predictive Calculator</h1>
+                <p class="hero-subtitle">Evaluating the Arithmetic Capabilities of Neural Networks</p>
+                <p class="hero-description">
+                    An in-depth investigation into why neural networks struggle with simple arithmetic expressions. 
+                    This project builds and evaluates various neural network architectures—including FNNs, RNNs, 
+                    attention-based RNNs, and Transformers—to assess their performance on arithmetic tasks.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">Try Demo</a>
+                    <a href="https://github.com/AntonStantan/matura" target="_blank" class="btn btn-secondary">
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value">5+</div>
+                        <div class="stat-label">Architectures</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">3</div>
+                        <div class="stat-label">GitHub Stars</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">Open Source</div>
+                        <div class="stat-label">Research</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About the Project</h2>
+                <p class="section-subtitle">Understanding Neural Networks' Arithmetic Limitations</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Research Goal</h3>
+                    <p>Investigate why neural networks often struggle with simple arithmetic expressions and evaluate the capabilities of different architectures.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🔬</div>
+                    <h3>Methodology</h3>
+                    <p>Build and test various neural network models on arithmetic problems, comparing their performance and understanding their limitations.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Scientific Approach</h3>
+                    <p>Comprehensive evaluation with statistical analysis, p-values, and detailed findings documented in research papers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architectures Section -->
+    <section id="architectures" class="section architectures-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Neural Network Architectures</h2>
+                <p class="section-subtitle">Exploring Different Approaches to Arithmetic Tasks</p>
+            </div>
+            <div class="architectures-grid">
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <div class="architecture-icon">📡</div>
+                        <h3>Feed-Forward Neural Networks</h3>
+                        <span class="badge badge-success">Best Performance</span>
+                    </div>
+                    <p class="architecture-description">
+                        Basic neural network architecture with multiple layers. FNN2 demonstrated the best performance among all tested models.
+                    </p>
+                    <ul class="architecture-features">
+                        <li>✓ FNN1: Initial implementation</li>
+                        <li>✓ FNN2: Optimized version (best model)</li>
+                        <li>✓ Simple and efficient architecture</li>
+                    </ul>
+                    <div class="architecture-files">
+                        <strong>Key Files:</strong> FNN1.ipynb, FNN2.ipynb, NPC-final.py
+                    </div>
+                </div>
+
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <div class="architecture-icon">🔄</div>
+                        <h3>Recurrent Neural Networks</h3>
+                        <span class="badge badge-info">Sequential Processing</span>
+                    </div>
+                    <p class="architecture-description">
+                        Networks with loops that allow information persistence, suitable for sequence-based arithmetic operations.
+                    </p>
+                    <ul class="architecture-features">
+                        <li>✓ RNN0: Basic implementation</li>
+                        <li>✓ RNN2: Enhanced version</li>
+                        <li>✓ Handles sequential data effectively</li>
+                    </ul>
+                    <div class="architecture-files">
+                        <strong>Key Files:</strong> RNN0.ipynb, RNN2.ipynb
+                    </div>
+                </div>
+
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <div class="architecture-icon">👁️</div>
+                        <h3>Attentional RNN</h3>
+                        <span class="badge badge-warning">With Attention</span>
+                    </div>
+                    <p class="architecture-description">
+                        LSTM-based RNN with attention mechanism to focus on relevant parts of the input sequence.
+                    </p>
+                    <ul class="architecture-features">
+                        <li>✓ LSTM architecture</li>
+                        <li>✓ Attention mechanism</li>
+                        <li>✓ Enhanced context awareness</li>
+                    </ul>
+                    <div class="architecture-files">
+                        <strong>Key Files:</strong> g4gLSTM.ipynb
+                    </div>
+                </div>
+
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <div class="architecture-icon">⚡</div>
+                        <h3>Transformer Architecture</h3>
+                        <span class="badge badge-primary">State-of-the-art</span>
+                    </div>
+                    <p class="architecture-description">
+                        Modern transformer architecture with self-attention mechanisms for parallel processing.
+                    </p>
+                    <ul class="architecture-features">
+                        <li>✓ Multiple iterations (0, 4, 5)</li>
+                        <li>✓ Self-attention mechanisms</li>
+                        <li>✓ Parallel processing capabilities</li>
+                    </ul>
+                    <div class="architecture-files">
+                        <strong>Key Files:</strong> transformer0.ipynb, transformer4.ipynb, transformer5.ipynb
+                    </div>
+                </div>
+
+                <div class="architecture-card">
+                    <div class="architecture-header">
+                        <div class="architecture-icon">🚀</div>
+                        <h3>Pre-trained Transformers</h3>
+                        <span class="badge badge-special">Fine-tuned</span>
+                    </div>
+                    <p class="architecture-description">
+                        Fine-tuned pre-trained models including Gemma (270M & 1B parameters) and Gemini via Vertex AI.
+                    </p>
+                    <ul class="architecture-features">
+                        <li>✓ Gemma 270M (Hugging Face)</li>
+                        <li>✓ Gemma 1B (Hugging Face)</li>
+                        <li>✓ Gemini (Vertex AI)</li>
+                    </ul>
+                    <div class="architecture-files">
+                        <strong>Key Files:</strong> gemma_huggingface.ipynb, big_gemma_huggingface.ipynb, gemini_vertex.ipynb
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="section demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Try It Yourself</h2>
+                <p class="section-subtitle">Experience the Neural Predictive Calculator</p>
+            </div>
+            <div class="demo-content">
+                <div class="demo-card">
+                    <div class="demo-icon">💻</div>
+                    <h3>Interactive Demo</h3>
+                    <p>The best performing model (FNN2) is available as a demonstration script. Try it with your own arithmetic expressions!</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>Terminal</span>
+                            <button class="copy-btn" data-code="pip install -r requirements.txt">Copy</button>
+                        </div>
+                        <pre><code><span class="comment"># Install dependencies</span>
+pip install -r requirements.txt
+
+<span class="comment"># Run the demo</span>
+python FNN/NPC-final.py</code></pre>
+                    </div>
+                    <a href="https://github.com/AntonStantan/matura/blob/main/FNN/NPC-final.py" target="_blank" class="btn btn-primary">View Demo Script</a>
+                </div>
+                <div class="demo-info">
+                    <h4>📦 Installation</h4>
+                    <p>All required Python packages are listed in <code>requirements.txt</code>. The models will run on CPU.</p>
+                    <h4>🎮 Usage</h4>
+                    <p>The demonstration script allows you to input arithmetic expressions and see how the neural network computes the results.</p>
+                    <h4>⚙️ GPU Support</h4>
+                    <p>If you have an NVIDIA Jetson device, use <code>requirements_GPU.txt</code> for GPU-accelerated inference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="documentation" class="section documentation-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Documentation</h2>
+                <p class="section-subtitle">Comprehensive Research Materials</p>
+            </div>
+            <div class="documentation-grid">
+                <a href="https://github.com/AntonStantan/matura/blob/main/documentation/findings/findings.pdf" target="_blank" class="doc-card">
+                    <div class="doc-icon">📊</div>
+                    <h3>Findings</h3>
+                    <p>Detailed results and analysis of the research, including performance comparisons and insights.</p>
+                    <span class="doc-link">View PDF →</span>
+                </a>
+                <a href="https://github.com/AntonStantan/matura/blob/main/documentation/methodology/methodology.pdf" target="_blank" class="doc-card">
+                    <div class="doc-icon">🔬</div>
+                    <h3>Methodology</h3>
+                    <p>Complete description of research methods, experimental setup, and evaluation criteria.</p>
+                    <span class="doc-link">View PDF →</span>
+                </a>
+                <a href="https://github.com/AntonStantan/matura/blob/main/documentation/AI_assistance/ai_assistance.pdf" target="_blank" class="doc-card">
+                    <div class="doc-icon">🤖</div>
+                    <h3>AI Assistance</h3>
+                    <p>Transparent documentation of AI assistance used throughout the project.</p>
+                    <span class="doc-link">View PDF →</span>
+                </a>
+                <a href="https://github.com/AntonStantan/matura/blob/main/zwischenProdukt/LiteraturstudieAnton.pdf" target="_blank" class="doc-card">
+                    <div class="doc-icon">📚</div>
+                    <h3>Literature Review</h3>
+                    <p>Comprehensive review of related work and research (Zwischenprodukt).</p>
+                    <span class="doc-link">View PDF →</span>
+                </a>
+                <a href="https://github.com/AntonStantan/matura/blob/main/EvaluationMatura.xlsx" target="_blank" class="doc-card">
+                    <div class="doc-icon">📈</div>
+                    <h3>Evaluation Data</h3>
+                    <p>Raw evaluation data and findings table with statistical analysis.</p>
+                    <span class="doc-link">View Excel →</span>
+                </a>
+                <a href="https://github.com/AntonStantan/matura/tree/main/documentation/Process" target="_blank" class="doc-card">
+                    <div class="doc-icon">⚙️</div>
+                    <h3>Process Documentation</h3>
+                    <p>Detailed documentation of the work process (Arbeitsprozess).</p>
+                    <span class="doc-link">View Folder →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Repository Structure Section -->
+    <section class="section structure-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Repository Structure</h2>
+                <p class="section-subtitle">Organized and well-documented codebase</p>
+            </div>
+            <div class="structure-content">
+                <div class="folder-tree">
+                    <div class="tree-item folder">
+                        <span class="icon">📁</span> FNN/
+                        <div class="tree-description">Feed-Forward Neural Networks implementation</div>
+                    </div>
+                    <div class="tree-item folder">
+                        <span class="icon">📁</span> RNN/
+                        <div class="tree-description">Recurrent Neural Networks implementation</div>
+                    </div>
+                    <div class="tree-item folder">
+                        <span class="icon">📁</span> attentional-RNN/
+                        <div class="tree-description">RNNs with attention mechanisms</div>
+                    </div>
+                    <div class="tree-item folder">
+                        <span class="icon">📁</span> transformer/
+                        <div class="tree-description">Transformer-based models</div>
+                    </div>
+                    <div class="tree-item folder">
+                        <span class="icon">📁</span> pre-trained-transformers/
+                        <div class="tree-description">Fine-tuned pre-trained models</div>
+                    </div>
+                    <div class="tree-item folder">
+                        <span class="icon">📁</span> documentation/
+                        <div class="tree-description">Research documentation and findings</div>
+                    </div>
+                    <div class="tree-item file">
+                        <span class="icon">📄</span> GetXY.py
+                        <div class="tree-description">Dataset generation script</div>
+                    </div>
+                    <div class="tree-item file">
+                        <span class="icon">📄</span> get_p-value.py
+                        <div class="tree-description">Statistical analysis script</div>
+                    </div>
+                    <div class="tree-item file">
+                        <span class="icon">📄</span> requirements.txt
+                        <div class="tree-description">Python dependencies</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Neural Predictive Calculator</h3>
+                    <p>A research project investigating the arithmetic capabilities of neural networks.</p>
+                    <div class="footer-social">
+                        <a href="https://github.com/AntonStantan/matura" target="_blank" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#architectures">Architectures</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#documentation">Documentation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Research</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/AntonStantan/matura/blob/main/documentation/findings/findings.pdf" target="_blank">Findings</a></li>
+                        <li><a href="https://github.com/AntonStantan/matura/blob/main/documentation/methodology/methodology.pdf" target="_blank">Methodology</a></li>
+                        <li><a href="https://github.com/AntonStantan/matura/blob/main/zwischenProdukt/LiteraturstudieAnton.pdf" target="_blank">Literature Review</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Topics</h4>
+                    <div class="footer-tags">
+                        <span class="tag">Neural Networks</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Maturaarbeit</span>
+                        <span class="tag">Research</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Anton Mukin. Open Source Research Project.</p>
+                <p>Licensed under MIT License</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
