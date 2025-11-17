@@ -222,8 +222,37 @@
             <div class="demo-content">
                 <div class="demo-card">
                     <div class="demo-icon">💻</div>
-                    <h3>Interactive Demo</h3>
-                    <p>The best performing model (FNN2) is available as a demonstration script. Try it with your own arithmetic expressions!</p>
+                    <h3>Live Interactive Calculator</h3>
+                    <p>Try the FNN2 model right here! Enter an arithmetic expression and see how the neural network computes it.</p>
+                    <div class="calculator-interface">
+                        <div class="calculator-input-group">
+                            <label for="expression-input">Enter Expression (e.g., "1 + 2 - 3")</label>
+                            <input type="text" id="expression-input" placeholder="1 + 2 - 3" class="expression-input">
+                            <button id="calculate-btn" class="btn btn-primary calculator-btn">Calculate</button>
+                        </div>
+                        <div id="calculator-result" class="calculator-result" style="display: none;">
+                            <div class="result-item">
+                                <span class="result-label">Neural Network Result:</span>
+                                <span class="result-value" id="nn-result">--</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Actual Result:</span>
+                                <span class="result-value" id="actual-result">--</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="result-label">Difference:</span>
+                                <span class="result-value" id="difference">--</span>
+                            </div>
+                        </div>
+                        <div id="calculator-error" class="calculator-error" style="display: none;"></div>
+                        <div id="calculator-loading" class="calculator-loading" style="display: none;">
+                            <div class="loading-spinner"></div>
+                            <span>Computing...</span>
+                        </div>
+                    </div>
+                    <div class="demo-divider"></div>
+                    <h4>Or Run Locally</h4>
+                    <p>Download and run the model on your own machine:</p>
                     <div class="code-block">
                         <div class="code-header">
                             <span>Terminal</span>
@@ -235,7 +264,7 @@ pip install -r requirements.txt
 <span class="comment"># Run the demo</span>
 python FNN/NPC-final.py</code></pre>
                     </div>
-                    <a href="https://github.com/AntonStantan/matura/blob/main/FNN/NPC-final.py" target="_blank" class="btn btn-primary">View Demo Script</a>
+                    <a href="https://github.com/AntonStantan/matura/blob/main/FNN/NPC-final.py" target="_blank" class="btn btn-secondary">View Demo Script</a>
                 </div>
                 <div class="demo-info">
                     <h4>📦 Installation</h4>

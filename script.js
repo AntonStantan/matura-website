@@ -174,6 +174,79 @@ document.querySelectorAll('.about-card, .architecture-card, .doc-card').forEach(
     });
 });
 
+// Neural Network Calculator
+const API_URL = 'http://localhost:5000/api';  // Change this to your deployed API URL
+
+document.addEventListener('DOMContentLoaded', function() {
+    const calculateBtn = document.getElementById('calculate-btn');
+    const expressionInput = document.getElementById('expression-input');
+    const resultDiv = document.getElementById('calculator-result');
+    const errorDiv = document.getElementById('calculator-error');
+    const loadingDiv = document.getElementById('calculator-loading');
+    
+    if (calculateBtn && expressionInput) {
+        // Handle Enter key press
+        expressionInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                calculateBtn.click();
+            }
+        });
+        
+        calculateBtn.addEventListener('click', async function() {
+            const expression = expressionInput.value.trim();
+            
+            if (!expression) {
+                showError('Please enter an expression');
+                return;
+            }
+            
+            // Hide previous results/errors
+            resultDiv.style.display = 'none';
+            errorDiv.style.display = 'none';
+            loadingDiv.style.display = 'flex';
+            calculateBtn.disabled = true;
+            
+            try {
+                const response = await fetch(`${API_URL}/calculate`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ expression: expression })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    showResult(data);
+                } else {
+                    showError(data.error || 'Failed to calculate');
+                }
+            } catch (error) {
+                showError('Unable to connect to the server. Make sure the API server is running.');
+                console.error('Error:', error);
+            } finally {
+                loadingDiv.style.display = 'none';
+                calculateBtn.disabled = false;
+            }
+        });
+    }
+    
+    function showResult(data) {
+        document.getElementById('nn-result').textContent = data.result;
+        document.getElementById('actual-result').textContent = data.actual !== null ? data.actual : 'N/A';
+        document.getElementById('difference').textContent = data.difference !== null ? data.difference.toFixed(4) : 'N/A';
+        resultDiv.style.display = 'block';
+        errorDiv.style.display = 'none';
+    }
+    
+    function showError(message) {
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+        resultDiv.style.display = 'none';
+    }
+});
+
 // Console Easter Egg
 console.log('%c🧠 Neural Predictive Calculator', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%cInterested in the code? Check out the repository:', 'font-size: 14px; color: #94a3b8;');
