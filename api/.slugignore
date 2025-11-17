@@ -1,0 +1,6 @@
+*.md
+setup.ps1
+DEPLOYMENT.md
+README.md
+.git
+.gitignore

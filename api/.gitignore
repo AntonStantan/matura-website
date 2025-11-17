@@ -11,8 +11,8 @@ ENV/
 dist/
 build/
 
-# Model weights (large file - download separately)
-FNN2_weights.weights.h5
+# Model weights - now tracked with Git LFS for Heroku deployment
+# FNN2_weights.weights.h5
 
 # IDE
 .vscode/
