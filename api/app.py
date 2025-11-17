@@ -60,6 +60,20 @@ try:
 except Exception as e:
     print(f"✗ Error loading model: {e}")
 
+@app.route('/', methods=['GET'])
+def index():
+    """Root endpoint - API info"""
+    return jsonify({
+        'name': 'Neural Predictive Calculator API',
+        'version': '1.0.0',
+        'status': 'running',
+        'endpoints': {
+            'health': '/api/health',
+            'calculate': '/api/calculate (POST)',
+            'batch_calculate': '/api/batch-calculate (POST)'
+        }
+    })
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
