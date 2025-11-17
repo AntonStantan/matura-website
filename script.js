@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     showError(data.error || 'Failed to calculate');
                 }
             } catch (error) {
-                showError('Unable to connect to the server. Make sure the API server is running.');
+                showError('Unable to connect to the server. API server is propably offline.');
                 console.error('Error:', error);
             } finally {
                 loadingDiv.style.display = 'none';
