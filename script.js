@@ -175,7 +175,8 @@ document.querySelectorAll('.about-card, .architecture-card, .doc-card').forEach(
 });
 
 // Neural Network Calculator
-const API_URL = 'http://localhost:5000/api';  // Change this to your deployed API URL
+// API URL - Using deployed Heroku backend
+const API_URL = 'https://npc-calculator-api-16503410aa18.herokuapp.com/api';
 
 document.addEventListener('DOMContentLoaded', function() {
     const calculateBtn = document.getElementById('calculate-btn');
