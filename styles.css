@@ -931,27 +931,69 @@ body {
     .footer-content {
         grid-template-columns: 1fr 1fr;
     }
+    
+    .architecture-card {
+        padding: 24px;
+    }
 }
 
 @media (max-width: 768px) {
+    /* Navigation */
     .nav-links {
-        display: none;
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        background: var(--bg-secondary);
+        width: 80%;
+        max-width: 300px;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        padding: 30px;
+        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links a {
+        padding: 12px 0;
+        border-top: 1px solid var(--border-color); /* top boder for mobile nav bar */
+        border-bottom: 1px solid var(--border-color);
     }
     
     .mobile-menu-toggle {
         display: flex;
     }
     
+    /* Hero */
+    .hero {
+        min-height: 70vh;
+        padding: 80px 0 60px;
+    }
+    
     .hero-title {
         font-size: 2.5rem;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
         font-size: 1.25rem;
     }
     
+    .hero-description {
+        font-size: 1rem;
+    }
+    
     .hero-buttons {
         flex-direction: column;
+        width: 100%;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
     }
     
     .hero-stats {
@@ -959,31 +1001,260 @@ body {
         gap: 30px;
     }
     
+    /* Grids */
     .about-grid,
     .architectures-grid,
     .documentation-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Demo section */
+    .demo-card {
+        padding: 30px 20px;
+    }
+    
+    .demo-info {
+        padding: 30px 20px;
+    }
+    
+    /* Calculator */
+    .calculator-interface {
+        margin: 20px 0;
+    }
+    
+    .expression-input {
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+    
+    .calculator-btn {
+        padding: 12px 24px;
+        font-size: 0.9rem;
+    }
+    
+    /* Code blocks */
+    .code-block {
+        font-size: 0.85rem;
+    }
+    
+    .code-block pre {
+        padding: 16px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 40px 0 20px;
     }
     
     .footer-content {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
     
+    /* Section headers */
     .section-title {
         font-size: 2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Architecture cards */
+    .architecture-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .badge {
+        align-self: flex-start;
     }
 }
 
 @media (max-width: 480px) {
+    /* Container */
     .container {
         padding: 0 16px;
     }
     
+    /* Hero */
+    .hero {
+        min-height: 60vh;
+        padding: 60px 0 40px;
+    }
+    
+    .hero-badge {
+        font-size: 0.75rem;
+        padding: 6px 14px;
+    }
+    
     .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    /* Sections */
+    .section {
+        padding: 50px 0;
+    }
+    
+    .section-header {
+        margin-bottom: 30px;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    /* Cards */
+    .about-card,
+    .architecture-card,
+    .doc-card,
+    .demo-card,
+    .demo-info {
+        padding: 20px 16px;
+    }
+    
+    .card-icon,
+    .doc-icon,
+    .demo-icon {
         font-size: 2rem;
     }
     
-    .section {
-        padding: 60px 0;
+    /* Calculator */
+    .calculator-interface {
+        margin: 15px 0;
+    }
+    
+    .calculator-input-group label {
+        font-size: 0.8rem;
+    }
+    
+    .expression-input {
+        font-size: 0.95rem;
+        padding: 10px 14px;
+    }
+    
+    .calculator-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .result-label {
+        font-size: 0.8rem;
+    }
+    
+    .result-value {
+        font-size: 1rem;
+    }
+    
+    /* Code blocks */
+    .code-block {
+        font-size: 0.75rem;
+        border-radius: 8px;
+    }
+    
+    .code-block pre {
+        padding: 12px;
+        overflow-x: auto;
+    }
+    
+    .code-header {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+    
+    .copy-btn {
+        padding: 4px 10px;
+        font-size: 0.7rem;
+    }
+    
+    /* Architecture features */
+    .architecture-features {
+        font-size: 0.9rem;
+    }
+    
+    .architecture-features li {
+        padding-left: 24px;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 30px 0 20px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+    
+    .footer-section p {
+        font-size: 0.9rem;
+    }
+    
+    /* Buttons */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Tree structure */
+    .folder-tree {
+        font-size: 0.85rem;
+    }
+    
+    .tree-item {
+        padding: 8px 12px;
+    }
+}
+
+/* Extra small devices (landscape phones) */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .calculator-interface {
+        margin: 10px 0;
+    }
+    
+    .expression-input,
+    .calculator-btn {
+        font-size: 0.85rem;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .btn,
+    .nav-links a,
+    .footer-links a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+    
+    .calculator-btn {
+        min-height: 48px;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .about-card:hover,
+    .architecture-card:hover,
+    .doc-card:hover {
+        transform: none;
     }
 }
