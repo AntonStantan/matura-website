@@ -15,8 +15,10 @@ def tokenizer(input_list):
             else:  # Odd index: operator
                 if tokenized_x[i][j] == "+":
                     tokenized_x[i][j] = np.float32(1)
-                else:
+                elif tokenized_x[i][j] == "-":
                     tokenized_x[i][j] = np.float32(0)
+                else:
+                    raise ValueError(f"Unknown operator: {tokenized_x[i][j]}")
         
         # Add padding to make all inputs length 15
         padding_count = 15 - len(tokenized_x[i])
