@@ -259,6 +259,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// GitHub API Integration - Fetch repo stats
+const GITHUB_API_URL = 'https://api.github.com/repos/AntonStantan/matura';
+
+async function fetchGitHubStats() {
+    const starsElement = document.getElementById('github-stars');
+    const forksElement = document.getElementById('github-forks');
+    
+    try {
+        const response = await fetch(GITHUB_API_URL, {
+            headers: {
+                'Accept': 'application/vnd.github.v3+json'
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error('GitHub API request failed');
+        }
+        
+        const data = await response.json();
+        
+        // Update stars
+        if (starsElement) {
+            starsElement.textContent = data.stargazers_count;
+            starsElement.classList.add('loaded');
+        }
+        
+        // Update forks
+        if (forksElement) {
+            forksElement.textContent = data.forks_count;
+            forksElement.classList.add('loaded');
+        }
+        
+        console.log('GitHub stats loaded:', {
+            stars: data.stargazers_count,
+            forks: data.forks_count,
+            watchers: data.watchers_count,
+            open_issues: data.open_issues_count
+        });
+        
+    } catch (error) {
+        console.error('Failed to fetch GitHub stats:', error);
+        // Show fallback values on error
+        if (starsElement) starsElement.textContent = '⭐';
+        if (forksElement) forksElement.textContent = '🍴';
+    }
+}
+
+// Fetch GitHub stats when DOM is loaded
+document.addEventListener('DOMContentLoaded', fetchGitHubStats);
+
 // Console Easter Egg
 console.log('%c🧠 Neural Predictive Calculator', 'font-size: 20px; font-weight: bold; color: #6366f1;');
 console.log('%cInterested in the code? Check out the repository:', 'font-size: 14px; color: #94a3b8;');
